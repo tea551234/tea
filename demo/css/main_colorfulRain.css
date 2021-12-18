@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    overflow: hidden;
+    height: 100vh;
+}
+
+i {
+    position: absolute;
+    height: 200px;
+    background: linear-gradient(transparent, #FFF);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    animation: animate 5s linear infinite;
+}
+
+
+/*  ==========雨點顏色 ========== */
+
+i:nth-child(3n+1) {
+    background: linear-gradient(transparent, #0FF);
+}
+
+i:nth-child(3n+2) {
+    background: linear-gradient(transparent, #F0F);
+}
+
+
+/* i:nth-child(3n+3) {
+    background: linear-gradient(transparent, #F00);
+}
+
+i:nth-child(3n+4) {
+    background: linear-gradient(transparent, #0F0);
+}
+
+i:nth-child(3n+5) {
+    background: linear-gradient(transparent, #0FF);
+} */
+
+
+/*========== end雨點顏色 ==========*/
+
+
+/* ========== 由上往下動畫 ========== */
+
+@keyframes animate {
+    0% {
+        transform: translateY(-200px);
+    }
+    100% {
+        transform: translatey(calc(100vh + 200px));
+    }
+}
+
+
+/* ========== end由上往下動畫  ==========*/

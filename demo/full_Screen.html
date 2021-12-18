@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        /*==================== full screen====================*/
+        
+        .full-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background-color: rgba(0, 0, 0, .5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .full-screen .text {
+            width: 90%;
+            max-width: 500px;
+            max-height: 80%;
+            background: #fff;
+            padding: 20px;
+            position: relative;
+            border-radius: 15px;
+        }
+        
+        .full-screen .text .btn-close {
+            position: absolute;
+            widows: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+            top: -15px;
+            color: red;
+            right: -10px;
+        }
+        
+        .full-screen .text p {
+            font-size: 35px;
+            color: cornflowerblue;
+        }
+        /*==================== full screen====================*/
+    </style>
+</head>
+
+<body>
+
+
+    <!---------- 廣告頁面 ---------->
+    <!-- 廣告內容 -->
+    <div class="full-screen">
+
+
+        <div class="text">
+            <p id="sponsor">本網站由騎輪椅到台中贊助</p>
+            <a href="#" class="btn-close icofont-close-circled"></a>
+        </div>
+
+
+    </div>
+    <!-- JQ -->
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script type='text/javascript'>
+        $(document).ready(function() {
+            $(".btn-close").click(function() {
+                $(".full-screen").hide();
+            })
+        })
+    </script>
+
+
+    <!---------- 廣告頁面 ---------->
+
+
+</body>
+
+</html>

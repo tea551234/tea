@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Rain</title>
+    <link rel="stylesheet" href="./css/main_colorfulRain.css">
+</head>
+
+<body>
+
+    <script>
+        function rain() {
+            let amount = 50;
+            // =====建立雨點數量=====
+            let body = document.querySelector('body');
+            let i = 0;
+            while (i < amount) {
+                let drop = document.createElement(`i`);
+                let size = Math.random() * 5;
+                let posX = Math.floor(Math.random() * window.innerWidth)
+                let deplay = Math.random() * -20;
+                let duration = Math.random() * 5;
+                // =====雨點樣式隨機=====
+
+                drop.style.width = 0.2 + size + 'px';
+                // 雨點長度
+                drop.style.left = posX + 'px';
+                // 雨點間距
+                drop.style.animationDelay = deplay + 's';
+                drop.style.animationDuration = 1 + duration + 's';
+                body.appendChild(drop);
+                i++
+
+            }
+
+        }
+        rain()
+    </script>
+
+
+</body>
+
+</html>
