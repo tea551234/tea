@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0ff;
+}
+
+.menu {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: #0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu li {
+    position: absolute;
+    list-style: none;
+}
+
+.usbox {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 3px 4px rgb(0, 0, 0, 0.5);
+}
