@@ -25,6 +25,9 @@ body {
 .menu li {
     position: absolute;
     list-style: none;
+    transform-origin: 100px;
+    /* clac(帶參數運算(可放入百分比跟屬性)) 下方為360度分給8個var*/
+    transform: rotate(calc(360deg / 8* var( --i)));
 }
 
 .usbox {
@@ -38,5 +41,17 @@ body {
     z-index: 10000;
     cursor: pointer;
     border-radius: 50%;
-    box-shadow: 0 3px 4px rgb(0, 0, 0, 0.5);
+    box-shadow: 0 0px 4px rgb(0, 0, 0, 0.5);
+    font-size: 2em;
+    transition: 1.25s;
+}
+
+
+/* =====轉動方向===== */
+
+
+/* 選取器順序很重要 */
+
+.menu.active .usbox {
+    transform: rotate(325deg);
 }

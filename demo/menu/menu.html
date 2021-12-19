@@ -63,11 +63,11 @@
     </div>
     <script>
         // =====改面class名稱=====
-
-        let usbox = document.querySelector('usbox');
-        let menu = document.querySelector('menu');
+        // querySelector(.class) 放入class改變class的屬性,可達到類似開關切換
+        let usbox = document.querySelector('.usbox');
+        let menu = document.querySelector('.menu');
         usbox.onclick = function() {
-            menu.classList.usbox.toggle('active');
+            menu.classList.toggle('active');
         }
 
 
