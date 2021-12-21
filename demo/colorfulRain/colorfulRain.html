@@ -12,8 +12,8 @@
 <body>
 
     <script>
-        function rain() {
-            let amount = 50;
+        function rain(amountdata) {
+            let amount = amountdata;
             // =====建立雨點數量=====
             let body = document.querySelector('body');
             let i = 0;
@@ -37,7 +37,10 @@
             }
 
         }
-        rain()
+
+        amountdata = prompt("請輸入雨點數量")
+
+        rain(amountdata)
     </script>
 
 
