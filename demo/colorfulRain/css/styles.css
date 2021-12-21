@@ -30,8 +30,7 @@ i:nth-child(3n+2) {
     background: linear-gradient(transparent, #F0F);
 }
 
-
-/* i:nth-child(3n+3) {
+i:nth-child(3n+3) {
     background: linear-gradient(transparent, #F00);
 }
 
@@ -41,7 +40,7 @@ i:nth-child(3n+4) {
 
 i:nth-child(3n+5) {
     background: linear-gradient(transparent, #0FF);
-} */
+}
 
 
 /*========== end雨點顏色 ==========*/
