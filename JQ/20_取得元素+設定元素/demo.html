@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <script src="_js/jquery-3.6.0.js"></script> -->
+</head>
+
+<body>
+    <p id='demo'>皮卡丘</p>
+    <button id="btnLogin">登入</button>
+    <script>
+        function mytext(item) {
+            return item == undefined ?
+                document.getElementById('demo').innertext :
+                document.getElementById('demo').innertext = item;
+            //  抓取id=demo
+
+            // let deltext = document.getElementById("demo").innerText;
+
+        }
+
+        btnLogin.onclick = function() {
+            let temp = mytext();
+            console.log(temp);
+        }
+    </script>
+</body>
+
+</html>
