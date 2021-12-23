@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <script src="../_js/jquery-3.6.0.js"></script>
- 
+
     <!-- 10. 請觀察這些 log 的順序 -->
-    <script>console.log("A. 寫在 head ")</script>
+    <script>
+        console.log("A. 寫在 head ")
+    </script>
 </head>
 
 <body>
@@ -22,13 +24,18 @@
 
 
     <script>
-
         // 30. 測試 $(document).ready() ;
-        
+        // document會等載入完文件在讀
+        $(document).ready(function() {
+
+            console.log('cat');
+        })
     </script>
 
     <!-- 20. 請觀察這些 log 的順序 -->
-    <script>console.log("B. 寫在 body ")</script>
+    <script>
+        console.log("B. 寫在 body ")
+    </script>
 
 </body>
 

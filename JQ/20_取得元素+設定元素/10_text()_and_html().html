@@ -12,14 +12,15 @@
     <button id="btnLogin">登入</button>
 
     <script>
+        btnLogin.onclick = function() {
 
-        btnLogin.onclick = function () {
-            
             // 10. 取得 p 元素的內容
-
+            let temp = $('p').text();
+            console.log(temp);
             // 20. 設定 p 元素的內容
-
-            // 30. $().text() 和 $().html() 的差異
+            $('p').text('tea')
+                // 30. $().text() 和 $().html() 的差異
+                //     innerText        innerHTML 
 
         }
     </script>
