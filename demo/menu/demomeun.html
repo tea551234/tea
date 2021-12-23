@@ -66,11 +66,11 @@
         // querySelector(.class) 放入class改變class的屬性,可達到類似開關切換
         let usbox = document.querySelector('.usbox');
         let menu = document.querySelector('.menu');
-        usbox.onclick = function() {
-            menu.classList.toggle('active');
-        }
+        // usbox.onclick = function() {
+        //     menu.classList.toggle('active');
+        // }
 
-
+        usbox.onclick = () => menu.classList.toggle('active');
         // =====end改面class名稱=====
     </script>
 
