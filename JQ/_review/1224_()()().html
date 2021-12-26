@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        var a = 'apple';
+        var b = a.indexOf('a');
+        console.log(b); //
+
+        // --
+        function getString(){
+            return "cat"
+        }
+        var c = getString();    // "cat"
+        var d = c.indexOf('a'); //  1
+        console.log(d);         //  1
+        // --
+        var e = getString().indexOf('a').toString();
+        console.log(e);         //  "1"
+    </script>
+
+</body>
+
+</html>

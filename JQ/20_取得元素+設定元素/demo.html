@@ -13,8 +13,7 @@
         function mytext(item) {
             return item == undefined ?
                 document.getElementById('demo').innertext :
-                document.getElementById('demo').innertext = item;
-            //  抓取id=demo
+                (document.getElementById('demo').innertext = item) //  抓取id=demo
 
             // let deltext = document.getElementById("demo").innerText;
 

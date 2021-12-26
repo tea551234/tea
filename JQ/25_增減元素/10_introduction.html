@@ -31,11 +31,13 @@
         btnAdd.onclick = function () {
 
             // 10. $().append()：多增加一個清單項目 悠遊卡
-
+            //$('ol').append('<li>悠遊卡</li>');
 
             // 20. 上一個步驟點選一次增加一個
             //    該怎麼做可以變成點選一次清單數量翻倍?
             //    ex. 3 > 6 > 12 > 24 ...
+            var temp = $('ol').html();
+            $('ol').append(temp);
         }
     </script>
 

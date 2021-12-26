@@ -7,14 +7,13 @@
 </head>
 
 <body>
-   
 
     <label for="">文字輸入方框:</label>
-    <input id="userName" type="text">
+    <input id="userName" type="text" value="貓咪">
     <br><br>
     <button id="btnDemo">測試 $().prop() 和 $().attr() </button>
     <hr>
-    
+
     <div>
         <h4>測試區域:</h4>
         <p> 測試 prop ===><span id="testProp"> </span></p>
@@ -22,9 +21,13 @@
     </div>
 
     <script>
-        
-        // 10. 點選按鈕後，分別透過 $().prop() 和 $().attr() 取得輸入方框的值
-       
+
+        // 10. 點選按鈕後，分別透過 
+        //      $().prop() 和 $().attr() 取得輸入方框的值
+        btnDemo.onclick = function () {
+            testProp.innerText = $('#userName').prop('value');
+            testAttr.innerText = $('#userName').attr('value');
+        }
     </script>
 
 </body>

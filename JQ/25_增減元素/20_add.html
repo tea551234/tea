@@ -12,24 +12,34 @@
     <hr>
     <div>
         <h4>底下是清單</h4>
-        <ol>
+        <ol id="demo">
+            <!-- egg -->
             <li>LINE Pay</li>
-            <li>Apple Pay</li>
+            <!-- bee -->
+            <li id="applepay">Apple Pay</li>
+            <!-- cat -->
             <li>信用卡</li>
+            <!-- dog -->
         </ol>
     </div>
 
     <script>
-        
+
         btnAdd.onclick = function () {
-            
-          // 10. 測試 + 比較底下幾種方法的差異:
-          //    $().before()
-          //    $().after()
-          //    $().prepend() 
-          //    $().append()
-          //    $().appendTo()
-            
+
+            // 10. 測試 + 比較底下幾種方法的差異:
+            //    $().before()
+            //    $().after()
+            $('#applepay').before('<li>bee</li>');
+            $('#applepay').after('<li>cat</li>')
+
+            //    $().append()
+            //    $().prepend() 
+            $('#demo').append('<li>dog</li>');
+            $('#demo').prepend('<li>egg</li>');
+
+            //    $().appendTo()
+            $('<li>happy</li>').appendTo('#demo');
         }
     </script>
 

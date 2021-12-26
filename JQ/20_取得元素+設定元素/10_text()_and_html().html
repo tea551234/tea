@@ -8,20 +8,25 @@
 
 <body>
 
-    <p>請點選登入</p>
+    <p> <b>請點選登入</b> </p>
     <button id="btnLogin">登入</button>
 
     <script>
-        btnLogin.onclick = function() {
 
+        btnLogin.onclick = function () {
+            
             // 10. 取得 p 元素的內容
             let temp = $('p').text();
             console.log(temp);
-            // 20. 設定 p 元素的內容
-            $('p').text('tea')
-                // 30. $().text() 和 $().html() 的差異
-                //     innerText        innerHTML 
 
+            // 20. 設定 p 元素的內容
+            $('p').text('皮卡丘');
+
+            // // 30. $().text() 和 $().html() 的差異
+            // //  ==> text()  innerText
+            // //  ==> html()  innerHTML
+            // let temp = $('p').html();
+            // console.log(temp);
         }
     </script>
 

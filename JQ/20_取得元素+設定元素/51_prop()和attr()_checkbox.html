@@ -8,13 +8,18 @@
 
 <body>
 
-    <input type="checkbox">
+    <input id="chk1" type="checkbox" >
+    <input id="chk2" type="checkbox" checked>
     
     <script>
 
         // 10. 透過 prop() 和 attr() 
         //     取得 <input type="checkbox"> 元素 的 checked 屬性
-
+        console.log($('#chk1').prop('checked')); // false
+        console.log($('#chk1').attr('checked')); // undefined
+        console.log('--我是分隔線--'); 
+        console.log($('#chk2').prop('checked')); // true
+        console.log($('#chk2').attr('checked')); // checked
     </script>
 
 </body>

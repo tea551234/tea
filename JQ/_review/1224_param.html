@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        // // ES6
+        // function apple(bee=0){
+        //     console.log(bee);
+        // }
+
+        // // ES6 以前
+        // function apple(bee) {
+        //     bee = bee || 0;
+        //     console.log(bee);
+        // }
+
+        // // 如果以上預設的方法我都不知道的時候。
+        // function apple(bee) {
+        //     bee = bee == undefined ? 0 : bee;
+        //     console.log(bee);
+        // }
+
+        // arguments => 論點 ==> 關鍵字|保留字
+        function apple(bee){
+            console.log(bee); // => 雖然給了三個，但只會收一個下來
+            console.log('--我是分隔線--');
+            console.log(arguments);
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+            console.log(arguments[2]);
+        }
+        apple('apple', 'bee', 'cat');
+    </script>
+</body>
+
+</html>

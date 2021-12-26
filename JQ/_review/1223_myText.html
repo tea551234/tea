@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="_js/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <p id="demo"> 皮卡丘 </p>
+    <button id="btnLogin">登入</button>
+
+    <script>
+
+        // ?
+        // 請設計 
+        // ?
+        function myText(item) {
+            // 方法a:
+            if (item == undefined) {
+                return document.getElementById('demo').innerText;
+            } else {
+                document.getElementById('demo').innerText = item;
+            }
+
+            // // 方法b:
+            // return item == undefined ?
+            //     document.getElementById('demo').innerText :
+            //     (document.getElementById('demo').innerText = item)
+        }
+
+        btnLogin.onclick = function () {
+            // 當 呼叫 myText() 沒有給參數的時候
+            // 取得 #demo 的內容; 例如:  皮卡丘
+            var temp = myText();
+            console.log(temp);
+
+            // 當 呼叫 myText() 有給參數
+            // 設定 #demo 的內容; 例如:  伊布
+            myText('伊布');
+        }
+    </script>
+
+</body>
+
+</html>

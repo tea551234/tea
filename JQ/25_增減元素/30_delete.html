@@ -8,16 +8,42 @@
 </head>
 
 <body>
-
-    <h4>Category: DOM Removal</h4>
-    <p><a href='https://api.jquery.com/category/manipulation/dom-removal/'>https://api.jquery.com/category/manipulation/dom-removal/</a></p>
+    <button id="btnTest">10 測試</button>
+    <button id="btnPK">20 detach() 和 remove() </button>
+    <hr>
+    <div>
+        <button id="btnApple">Apple按鈕</button>
+    </div>
 
     <script>
-        // 10. 試著比較出 empty() 和 remove() 的差異
-
         // 20. 試著比較出 detach() 和 remove() 的差異
-        //      * jQuery 綁定事件的方法之一: $().on('事件名稱', function(){})
+        //      * jQuery 綁定事件的方法之一: 
+        //        $().on('事件名稱', function(){})
+        $('#btnApple').on('click', function () {
+            alert('hi ok');
+        })
+
+        btnPK.onclick = function(){
+            // 我想要移除 apple 按鈕，然後把 apple 按鈕加回來
+            var temp = $('#btnApple');
+            // $('#btnApple').detach();
+            $('#btnApple').remove();
+            $('body>div').append(temp);
+        }
+
+        // 10. 試著比較出 empty() 和 remove() 的差異
+        btnTest.onclick = function () {
+            // $('#btnApple').empty();  // 清除內容
+            // $('#btnApple').remove(); // 清除元素
+            // $('#btnApple').detach(); // 清除元素
+            // $('#btnApple').unwrap(); // 清除父元素
+        }
+
+
     </script>
+    <!-- 
+<h4>Category: DOM Removal</h4>
+<p><a href='https://api.jquery.com/category/manipulation/dom-removal/'>https://api.jquery.com/category/manipulation/dom-removal/</a></p> -->
 
 </body>
 

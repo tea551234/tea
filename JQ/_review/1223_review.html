@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        // 陣列[,..]  物件{屬性:值,..}  迴圈for()  函式|副程式 function()
+        // 1. 陣列裡面放物件
+        // 2. 設計一個function接收購物車
+        // 3. function 裡面有迴圈
+        // 4. 計算金額
+        var pxmart = [{
+            pid: 1,
+            pname: 'apple',
+            pprice: 100,
+            pdiscount: 'Y'
+        }, {
+            pid: 2,
+            pname: 'milk',
+            pprice: 200,
+            pdiscount: 'N'
+        }]
+
+        function getSummary(item, func) {
+            var tot = 0;
+            for (var dog of item) {
+                // // 折扣
+                tot += func(dog.pdiscount, dog['pprice']);
+            }
+            return tot;
+        }
+
+
+        // 未來五天，你會看到的jQuery模樣。
+        var temp = getSummary(pxmart, function (mytype, price) {
+            if (mytype == 'Y') {
+                return price * 0.8;
+            } else {
+                return price;
+            }
+        });
+        console.log(temp);
+    </script>
+
+
+</body>
+
+</html>

@@ -37,8 +37,18 @@
     <div id="demo"></div>
 
     <script>
-      
+        btnPickItem.onclick = function(){
+            var result = [];
+
+            // 我想要先找到 li 在找到葡萄
+            $('li').filter('.grape').each(function(idx, elm){
+                result.push(elm.innerText)
+            })
+
+            demo.innerHTML = result.join('<br>');
+        }
         // * 比較底下幾種 尋找|篩選 元素的方式 *
+        // 如果沒有辦法透過 css 的選擇器 一口氣找到所有元素的時候
 
         // 10. filter   ===> $().filter()
         // 11. find     ===> $().find()
