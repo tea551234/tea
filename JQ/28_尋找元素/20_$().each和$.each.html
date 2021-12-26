@@ -15,7 +15,9 @@
     <p><a href="https://api.jquery.com/jquery.each/">https://api.jquery.com/jquery.each/</a></p>
 
     <h4>$ vs $()</h4>
-    <p><a href="https://learn.jquery.com/using-jquery-core/dollar-object-vs-function/">https://learn.jquery.com/using-jquery-core/dollar-object-vs-function/</a></p>
+    <p><a
+            href="https://learn.jquery.com/using-jquery-core/dollar-object-vs-function/">https://learn.jquery.com/using-jquery-core/dollar-object-vs-function/</a>
+    </p>
     <hr>
 
     <h3>apple</h3>
@@ -26,13 +28,30 @@
         // 10. 畫面準備好以後才開始執行
         $(function () {
 
+            // (A)
             // 20. $().each(): 逐項取得所有 h3 元素 裡面的文字
+            $('h3').each(function (idx, elm) {
+                // console.log(idx); // 數字 0 1 2
+                // console.log(elm); // 元素本人
 
-            // 21. 將所有 h3 元素的文字改為斜體
+                // 21. 將所有 h3 元素的文字改為斜體
+                this.innerHTML = '<i>' + this.innerText + '</i>';
+                $(this).html(`<i> ${$(this).text()}  </i>`);
+                elm.innerHTML = '<i>' + elm.innerText + '</i>';
+                $(elm).html(`<i>  ${$(elm).text()}  </i>`);
 
+                // 聊天室
+                $(this).css('font-style','italic');
+                $(elm).css('font-style','italic');
+            })
+
+            // (B)
             // 30. $.each(): 讀出陣列裡面的項目
             var list = ['dog', 'egg'];
-
+            $.each(list, function(index, item){
+                console.log(index); // 陣列位置 數字
+                console.log(item);  // 陣列內容
+            });
         })
     </script>
 </body>
