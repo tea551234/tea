@@ -1,0 +1,13 @@
+/* 15_$().on().html */
+#outside {
+    width: 200px;
+    height: 100px;
+    background-color: gray;
+}
+
+
+/* 18_$().on()_more.html */
+td{
+    border: 1px solid black;
+    font-size: 2rem;
+}

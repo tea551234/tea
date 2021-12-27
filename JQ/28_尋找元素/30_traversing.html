@@ -8,10 +8,10 @@
 </head>
 
 <body>
-    
+
     <button id="btnPickItem">挑選</button>
     <hr>
-    
+
     <div id="tw">
         <h4>台灣水果</h4>
         <ul id="twList">
@@ -37,33 +37,69 @@
     <div id="demo"></div>
 
     <script>
-        btnPickItem.onclick = function(){
-            var result = [];
+        btnPickItem.onclick = function() {
+                var result = [];
+                // $('li').filter(function(idx, elm) {
+                //     // 透過elm找出ls在使用innertext找出關鍵字    elm.innerText.indexOf("放入塞選的字")
+                //     return idx == 0 || elm.innerText.indexOf("草莓") > -1;
 
-            // 我想要先找到 li 在找到葡萄
-            $('li').filter('.grape').each(function(idx, elm){
-                result.push(elm.innerText)
-            })
+                // }).each(function(idx, elm) {
+                //     result.push(elm.innerText);
+                // })
 
-            demo.innerHTML = result.join('<br>');
-        }
-        // * 比較底下幾種 尋找|篩選 元素的方式 *
-        // 如果沒有辦法透過 css 的選擇器 一口氣找到所有元素的時候
+
+                //a. $('li').filter(function(idx, elm) {
+                //     if (idx == 0 || idx == 4) {
+                //         return true;
+                //     } else {
+                //         return false;
+                //     }
+                // }).each(function(idx, elm) {
+                //     result.push(elm.innerText);
+                // })
+
+
+                // 我想要先找到 li 在找到葡萄
+                // $('li').filter('.grape').each(function(idx, elm){
+                //     result.push(elm.innerText)
+                // })
+
+                // =====21=====
+                // 21. :contains ===> $(selector:contains("text"))
+                // 選則li透過contains給關鍵字找出
+                // $('li:contains("葡萄")')
+                //     .each(function(idx, elm) {
+                //         result.push(elm.innerText);
+                //     })
+                // =====end 21=====
+
+                // =====22=====
+                // 22. :has()    ===> $(selector:has(selector))
+                $('').has()
+                    .each(function(idx, elm) {
+                        result.push(elm.innerText);
+                    })
+
+                // =====end 22=====
+                demo.innerHTML = result.join('<br>');
+
+
+
+            }
+            // * 比較底下幾種 尋找|篩選 元素的方式 *
+            // 如果沒有辦法透過 css 的選擇器 一口氣找到所有元素的時候
 
         // 10. filter   ===> $().filter()
         // 11. find     ===> $().find()
         // 12. children ===> $().children()
         // 13. parent   ===> $().parent()
         // 14. closest  ===> $().closest()
-        
+
         // 15. eq       ===> $().eq()
         // 16. contents ===> $().contents()
 
-        // 21. :contains ===> $(selector:contains(text))
-        // 22. :has()    ===> $(selector:has(selector))
 
         // 30. :has() 是不是 css 規範中的一部分?
-        
     </script>
 
 </body>
