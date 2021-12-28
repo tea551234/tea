@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../_js/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <button id="btnOut">消失</button>
+    <button id="btnIn">顯示</button>
+    <ul>
+        <li id="item1">apple</li>
+        <li id="item2">bee</li>
+        <li id="item3">cat</li>
+        <li id="item4">dog</li>
+        <li id="item5">egg</li>
+    </ul>
+
+    <script>
+        $('#btnOut').click(function() {
+            // alert('ok');
+            let temp = $().filter()
+            $('ul').fadeOut()
+        })
+        $('#btnIn').click(function() {
+            // alert('ok');
+            $('ul').fadeIn()
+        })
+    </script>
+</body>
+
+</html>
