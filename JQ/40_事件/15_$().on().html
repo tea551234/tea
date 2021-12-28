@@ -8,32 +8,29 @@
 </head>
 
 <body>
-    
-    <h4>jQuery Event Methods</h4>
-    <p><a href="https://www.w3schools.com/jquery/jquery_ref_events.asp">https://www.w3schools.com/jquery/jquery_ref_events.asp</a></p>
 
-    <h4>Category: Events</h4>
-    <p><a href="https://api.jquery.com/category/events/">https://api.jquery.com/category/events/</a></p>
-
-    <hr>
 
     <!-- 10.  -->
-    <h5>Hello!</h5>
-    <hr>
+
 
     <!-- 20. -->
-    <div id="outside">Hi!</div>
-    <hr>
+
 
     <!-- 30. -->
-    <ul>
-        <li>Apple</li>
-        <li>Bee</li>
-        <li>Cat</li>
-        <li>Dog</li>
-    </ul>
-    
+    <label id="bee">
+        <input type="checkbox" id="bee">demo</label>
     <script>
+        // function myFunction(event) {
+        //     var x = event.target;
+        //     document.getElementById("demo").innerHTML = "Triggered by a " + x.tagName + " element";
+        // }
+
+
+        $('#bee').on('click', function(event) {
+            console.log(event.target);
+            // .target 會回傳一整個label跟一個input,label
+            // console.log('ok');
+        })
 
         // 10. 透過 $().on() 掛載 click 事件到 h5
         //   * click 後改變 h5 的內容
@@ -43,9 +40,8 @@
 
         // 30. 同時設定兩個事件在指定元素上
         //   * click 和 mouseover
-
         // 40. 觀察事件的傳遞
-        //   * label 和 input 
+        //   * label 和 input
     </script>
 
 </body>

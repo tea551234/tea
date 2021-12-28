@@ -4,20 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <script src="../_js/jquery-3.6.0.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #0ff;
+        }
+        
+        .textbos {
+            font-size: 200px;
+        }
+    </style>
 </head>
 
 <body>
-    
-    <p>底下是顏色設定範例:</p>
-    <span style="color: hsl(0, 100%, 50%);">Apple</span>
-    <span style="color: hsl(180, 100%, 50%);">Bee</span>
 
+    <!-- <p>底下是顏色設定範例:</p>
+    <span style="color: hsl(0, 100%, 50%);">Apple</span>
+    <span style="color: hsl(180, 100%, 50%);">Bee</span> -->
+
+    <button id=bntCh>按我</button>
+    <div class="textbos">
+        <div style="background-color: blue;" id="div1">Hello</div>
+        <div style="background-color: red; " id="div2">jQuery</div>
+    </div>
     <script>
+        function gethsl() {
+            return Math.floor(Math.random() * 180 + 1)
+            let temp = gethsl()
+        }
+        $('#bntCh').click(function() {
+            $('#div1').css('background-color', 'red')
+        })
+
+
+
+
 
         // * 模仿 Hello Color 
         //   https://jxnblk.github.io/hello-color/?c=f7da2d
         //   做出一個隨機產生 對比色|互補色 的網頁
-
     </script>
 
 </body>
