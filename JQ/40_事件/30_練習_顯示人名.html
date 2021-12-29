@@ -6,23 +6,86 @@
     <script src="../_js/jquery-3.6.0.js"></script>
 
     <!-- 10. 參考結果設定對應 css -->
+    <style>
+        img {
+            height: 100px;
+            width: 100px;
+        }
+        
+        div {
+            float: left;
+        }
+        
+        .hiddenClass {
+            visibility: hidden;
+        }
+    </style>
 
 </head>
 
 <body>
-   
+    <div>
+        <img src="../img/001.jpg">
+        <p class='myclass'>111</p>
+        <img src="../img/002.jpg">
+        <p class='myclass'>222</p>
+        <img src="../img/003.jpg">
+        <p class='myclass'>333</p>
+        <img src="../img/004.jpg">
+        <p class='myclass'>444</p>
+    </div>
+
     <!-- 20. 設定袋子，裡面裝一張圖片和一段文字 -->
-   
+
+    <!-- =====tha===== -->
+
+
     <script>
-        $(function () {
-            
+        function hiddenClass() {
+            $('div').on('mouseenter museleave', function() {
+                $(this).find('p').toggleClass('.hiddenClass')
+            })
+        }
+    </script>
+
+
+    <!-- =====tha===== -->
+
+
+
+
+
+
+    <!-- <script>
+        $(function() {
+            $('div').on('mouseenter', function() {
+                // console.log('ok');
+                //開始用eq開啟第幾個物件
+
+                $('img').eq(0).on('mouseenter', function() {
+                    $('p').text('第一個圖')
+                })
+                $('img').eq(1).on('mouseenter', function() {
+                    $('p').text('第二個圖')
+                })
+                $('img').eq(2).on('mouseenter', function() {
+                    $('p').text('第三個圖')
+                })
+                $('img').eq(3).on('mouseenter', function() {
+                    $('p').text('第四個圖')
+                })
+
+            })
+            $('div').on('mouseleave', function() {
+                $('p').text('顯示名稱   ')
+            })
+
             // 30. 設定先將文字隱藏起來
             //      滑鼠經過div的時候顯示，離開的時候隱藏
             //    * mouseenter 和 mouseleave
 
         });
-
-    </script>
+    </script> -->
 </body>
 
 </html>
