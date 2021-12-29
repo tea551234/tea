@@ -18,18 +18,20 @@
 
     <!-- 30. -->
     <label id="bee">
-        <input type="checkbox" id="bee">demo</label>
+        <input type="checkbox" id="chk2">demo</label>
     <script>
         // function myFunction(event) {
         //     var x = event.target;
         //     document.getElementById("demo").innerHTML = "Triggered by a " + x.tagName + " element";
         // }
+        $('#chk2').on('click', function(item) {
+            item.stopPropagation(); //阻止冒泡事件 
+        })
 
-
-        $('#bee').on('click', function(event) {
-            console.log(event.target);
+        $('#bee').on('click', function() {
+            // console.log(event.target);
             // .target 會回傳一整個label跟一個input,label
-            // console.log('ok');
+            console.log('ok');
         })
 
         // 10. 透過 $().on() 掛載 click 事件到 h5

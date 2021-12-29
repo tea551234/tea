@@ -7,17 +7,18 @@
     <style>
         .usimg {
             position: absolute;
-            transition: 5.25s;
+            transition: 1.25s;
         }
         
         .imgbox.active .usimg {
-            transform: rotate(360deg);
+            transform: rotateZ(360deg);
+            justify-content: center;
+            align-items: center;
         }
-        
-        #demo {
+        /* #demo {
             width: 20%;
             height: 20%;
-        }
+        } */
     </style>
 </head>
 
@@ -37,10 +38,10 @@
         // usimg.onclick = function() {
         //     imgbox.classList.toggle('active');
         // }
-        $('.usimg').on('click', function() {
-            // alert('ok')
-            $('.imgbox').toggleClass('active');
-        })
+        // $('.usimg').on('click', function() {
+        //     // alert('ok')
+        //     $('.imgbox').toggleClass('active');
+        // })
 
 
         // usimg.onclick = () => imgbox.classList.toggle('active');
@@ -63,32 +64,15 @@
 
 
         // =====ans=====
-        /*
-        <style>
-                .usimg {
-                    position: absolute;
-                    transition: 1.25s;
-                }
-                
-                .imgbox.active .usimg {
-                    transform: rotate(360deg);
-                }
-            </style>
+        $(function() {
+            $('#demo').on('mouseenter', function() {
+                // console.log('a');
+                $('').css('transform', `rotateZ()`)
 
-        <body>
+            })
+        })
 
 
-            <div class="imgbox">
-                <div class="usimg">
-                    <img id="demo" src="../img/001.jpg">
-                </div>
-            </div>
-            <script>
-                let usimg = document.querySelector('.usimg');
-                let imgbox = document.querySelector('.imgbox');
-                usimg.onclick = () => imgbox.classList.toggle('active');
-                
-        */
         // =====ans=====
     </script>
 </body>

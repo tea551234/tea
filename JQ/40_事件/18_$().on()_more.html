@@ -29,22 +29,50 @@
             <td>#5</td>
         </tr>
     </table>
+    <button> 0 </button>
+    <button> 1 </button>
+    <button> 2 </button>
+    <button> 3 </button>
+    <button> 4 </button>
+
+    <div id="log"></div>
 
     <hr>
-    <button id="demo">click</button>
+    <!-- <button id="demo">click</button> -->
 
     <script>
-
         // 10. $().on( events [, selector ] [, data ], handler ) 
         //   * 使用其他的參數: selector
-
+        $('table').on('click', 'td', function() {
+                console.log(this);
+            }) //當你點擊table的'td'y則印出
 
         // 20. $().on( events [, selector ] [, data ], handler ) 
         //   * 使用其他的參數: data
-
+        $('table').on('click', [{
+            a: 'apple'
+        }, {
+            a: 'cat'
+        }], function(e) {
+            console.log(e.data[1].a);
+        })
 
         // 30. 從官方複製範例下來執行，結果是否相同?
         //   * 試著說明和改寫
+
+        for (let i = 0; i < 5; i++) {
+            $("button:not(:first)").eq(i).on("click", {
+                value: i
+            }, function(event) {
+                let logDiv = $("#log");
+                let msgs = [
+                    "button = " + $(this).index(),
+                    "event.data.value = " + event.data.value,
+                    "i = " + i
+                ];
+                logDiv.append(msgs.join(", ") + "<br>");
+            });
+        }
     </script>
 
 
