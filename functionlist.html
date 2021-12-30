@@ -3,19 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <script src="../_js/jquery-3.6.0.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
 
-    <!-- 稍後這邊我會增加我需要的屬性 -->
-    <input type="checkbox" id="demo"> All
-    <input type="checkbox" name="demo" id="apple"> Apple
-    <input type="checkbox" name="demo" id="bee"> Bee
-    <input type="checkbox" name="demo" id="cat"> Cat
 
     <script>
-        // ===== 全部打溝=====
+        // ===== 全選function=====
+
         // input  ALL id='demo'    其他選項 name給demo 
         function allCheckbox() {
             $('input').change(function() {
@@ -33,9 +31,24 @@
 
             })
         }
-        // ===== 全部打溝=====
-        allCheckbox()
+        // =====end全選=====
+
+
+        // **********
+
+
+        // =====觸碰顯示=====
+        //給觸碰的圖片hiddenClass的class屬性讓p顯示隱藏
+        function hiddenClass() {
+            $('div').on('mouseenter museleave', function() {
+                $(this).find('p').toggleClass('.hiddenClass')
+            })
+        }
+        // =====end觸碰顯示=====
     </script>
+
+
+
 </body>
 
 </html>

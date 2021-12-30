@@ -9,12 +9,11 @@
             position: absolute;
             transition: 1.25s;
         }
-        
-        .imgbox.active .usimg {
+        /* .imgbox.active .usimg {
             transform: rotateZ(360deg);
             justify-content: center;
             align-items: center;
-        }
+        } */
         /* #demo {
             width: 20%;
             height: 20%;
@@ -27,14 +26,14 @@
 
     <div class="imgbox">
         <div class="usimg">
-            <img id="demo" src="../img/10.jpg">
+            <img id="demo" src="./螢幕擷取畫面 2021-10-28 163146.png">
         </div>
     </div>
     <script>
         // =====改面class名稱=====
         // querySelector(.class) 放入class改變class的屬性,可達到類似開關切換
-        let usimg = document.querySelector('.usimg');
-        let imgbox = document.querySelector('.imgbox');
+        // let usimg = document.querySelector('.usimg');
+        // let imgbox = document.querySelector('.imgbox');
         // usimg.onclick = function() {
         //     imgbox.classList.toggle('active');
         // }
@@ -64,14 +63,32 @@
 
 
         // =====ans=====
-        $(function() {
-            $('#demo').on('mouseenter', function() {
-                // console.log('a');
-                $('').css('transform', `rotateZ()`)
+        // $(function() {
+        //     $('#demo').on('mouseenter', function() {
+        //         // console.log('a');
+        //         $('').css('transform', `rotateZ()`)
 
+        //     })
+        // })
+        // =====滑鼠經過選轉圖片=====
+        function mouseenterRotation() {
+            $('#demo').on({
+                'mouseenter': function() {
+                    flag = setInterval(function() {
+                        //每次選轉+5deg
+                        deg += 5;
+
+                        $('#demo').css('transform', `rotateZ(${deg}deg)`);
+                    }, 100)
+                },
+                'mouseleave': function() {
+                    clearInterval(flag);
+                }
             })
-        })
 
+        }
+        mouseenterRotation()
+            // =====end滑鼠經過選轉圖片=====
 
         // =====ans=====
     </script>
