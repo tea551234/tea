@@ -1,61 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <script src="../_js/jquery-3.6.0.js"></script>
-    <link rel="stylesheet" href="../_jquery-ui-1.12.1/jquery-ui.css">
-    <script src="../_jquery-ui-1.12.1/jquery-ui.js"></script>
-    <script>
-        $(function() {
-            $("#accordion").accordion();
-        });
-    </script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../_jquery-ui-1.12.1/jquery-ui.css">
+    <script src="../../_js/jquery-3.6.0.js"></script>
+    <script src="../../_jquery-ui-1.12.1/jquery-ui.js"></script>
+    <style>
+        .accordionInfo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .accordionInfo>div {
+            width: 300px;
+        }
+        /* 
+        .accordionInfo>div:nth-child(odd){
+            background-color: salmon;
+        } 
+        */
+    </style>
 </head>
 
 <body>
 
+    <!-- 10. 先確認這個範例可以正常執行，如果沒有請檢查上列引用檔案路徑是否正確 -->
+
+    <!-- 20. 改寫手風琴內容，將文字改為 圖片+文字+文字 等三個區塊 -->
+
     <div id="accordion">
-        <h3>ㄟ你過來一下拉</h3>
-        <div>
-            <img style=" height: 30%; width: 10%; float: left;" src="../img/001.jpg" alt="">
-            <p>
-                quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-            </p>
+        <p>魯夫</p>
+        <div class="accordionInfo">
+            <div> <img src="../img/001.jpg" alt=""></div>
+            <div> aaaapple Mauris mauris ante, blandit et,</div>
+            <div> bee Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec su</div>
         </div>
-        <h3>你他媽過來一下拉</h3>
-        <div>
-            <p>
-                Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna.
-            </p>
-        </div>
-        <h3>AAAAAAAAAAAAAA</h3>
-        <div>
-            <p>
-                Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam
-                nisi, eu iaculis leo purus venenatis dui.
-            </p>
-            <ul>
-                <li>List item one</li>
-                <li>List item two</li>
-                <li>List item three</li>
-            </ul>
-        </div>
-        <h3>哭阿</h3>
-        <div>
-            <p>
-                Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia mauris vel est.
-            </p>
-            <p>
-                Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-            </p>
-        </div>
+
     </div>
+    <script>
+        $(function() {
 
+            var data = [{
+                opID: 2,
+                opName: "索隆",
+                opImage: "../img/001.jpg",
+                opCenter: "這段文字會放在中間",
+                opRight: "在右邊"
+            }, {
+                opID: 3,
+                opName: "娜美",
+                opImage: " ../img/001.jpg ",
+                opCenter: "apple",
+                opRight: "bee"
+            }]
 
+            $.each(data, function(idx, elm) {
+                // 把陣列內容讀出後，放到畫面上
+
+                // // 方法1:
+                // $('#accordion').append(`<p>${elm.opName}</p>`);
+                // $('#accordion').append(`<div class="accordionInfo">
+                //     <div> <img src="${elm.opImage}" alt=""></div>
+                //     <div> aaaapple Mauris mauris ante, blandit et,</div>
+                //     <div> bee Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                //         ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                //         amet, nunc. Nam a nibh. Donec su</div>
+                // </div>`);
+
+                // 方法2:
+
+                // 肚子的內容
+                var $newInfo = $('<div></div>').addClass('accordionInfo');
+                $newInfo.append($('<div></div>').append($('<img>').prop('src', elm.opImage)));
+                $newInfo.append(`<div>${elm.opCenter}</div>`);
+                $newInfo.append(`<div>${elm.opRight}</div>`);
+
+                $('#accordion').append($('<p></p>').text(elm.opName)).append($newInfo)
+            })
+
+            // 先把元素準備好然後才變成手風琴
+            $("#accordion").accordion();
+        });
+    </script>
 </body>
 
 </html>

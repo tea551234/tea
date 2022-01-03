@@ -5,27 +5,69 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../_jquery-ui-1.12.1/jquery-ui.css">
     <script src="../../_js/jquery-3.6.0.js"></script>
-    <script src="../../_jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="../_jquery-ui-1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../_jquery-ui-1.12.1/jquery-ui.css">
+    <style>
+        .draggable {
+            width: 100px;
+            height: 100px;
+            padding: 0.5em;
+            float: left;
+            margin: 10px 10px 10px 0;
+        }
+        
+        #droppable {
+            height: 150px;
+            padding: 0.5em;
+            margin: 10px;
+            font-size: 3rem;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- 10. jQuery UI 官網文件所在 -->
-    <!--    API Documentation > (左側) Interactions > Draggable Widget -->
-    <!--    API Documentation > (左側) Interactions > Droppable Widget -->
+    <div id="droppable" class="ui-widget-header">
+        <p>Drop here</p>
+    </div>
 
-    <!-- 15. 複製官方網站的範例 -->
-    <!--    Demos > Interactions > Droppable > Default functionality -->
+    <div class="draggable ui-widget-content">
+        <p>Drag me to my target</p>
+    </div>
+    <div class="draggable ui-widget-content">
+        <p>Drag me to my target</p>
+    </div>
+    <div class="draggable ui-widget-content">
+        <p>Drag me to my target</p>
+    </div>
 
-
-    <!-- 20. 改寫範例，增加可以拖動的選項 -->
 
     <script>
-        
-        // 30. 增加拖曳時，改變內容文字
+        $(function() {
 
-        // 40. 增加目的地的事件偵測
+            $(".draggable").draggable({});
 
+
+
+            $("#droppable").droppable({
+                drop: function(event, ui) {
+                    console.log(ui)
+                    $(this)
+                        .addClass("ui-state-highlight")
+                        .find("p")
+                        .html("Dropped!")
+                        .fadeOut(2000, function() {
+                            $(this).parent().removeClass('ui-state-highlight');
+                        });
+                },
+                over: function() {
+                    $(this).find('p').text('丟我')
+                },
+                out: function() {
+                    $(this).find('p').text('好耶')
+                }
+            });
+        });
     </script>
 
 </body>
