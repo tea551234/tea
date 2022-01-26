@@ -10,18 +10,26 @@ class Counter extends Component {
     render() {
         return (
             <div>
-                <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
-                <button onClick={this.okbtn} className='btn btn-outline-success btn-sm'>按我!!!!</button>
+                <div>
+                    <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
+                    <button onClick={() => { this.handleIncrement({ id: 1, text: "aaa" }) }} className='btn btn-outline-success btn-sm'>按我!!!!</button>
+                </div>
+                
+                <div>
+                    <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
+                    <button onClick={() => { this.handleIncrement({ id: 2, text: "bbb" }) }} className='btn btn-outline-success btn-sm'>按我!!!!</button>
+                </div>
+
             </div>
         );
     }
 
-    okbtn = () => {
+    handleIncrement = () => {
         // this.state.count += 1;
         // this.setState({})
 
         // this.setState( { count: ++this.state.count  } )
-
+        
         let newState = { ...this.state }
         newState.count += 1;
         this.setState(newState)
