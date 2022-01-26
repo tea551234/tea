@@ -5,11 +5,17 @@ import Counter from './counter.jsx'
 
 
 class Counters extends Component {
-    state = {}
+    state = {
+        counters: [
+            { id: 1, value: 2 },
+            { id: 3, value: 3 },
+            { id: 2, value: 4 },
+        ]
+    }
     render() {
         return (
             <div>
-                <Counter></Counter>
+                {this.state.counters.map( c => <Counter key={c.id} ></Counter>  )}
             </div>
         )
     }

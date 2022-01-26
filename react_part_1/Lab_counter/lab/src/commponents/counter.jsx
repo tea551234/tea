@@ -14,11 +14,6 @@ class Counter extends Component {
                     <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
                     <button onClick={() => { this.handleIncrement({ id: 1, text: "aaa" }) }} className='btn btn-outline-success btn-sm'>按我!!!!</button>
                 </div>
-                
-                <div>
-                    <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
-                    <button onClick={() => { this.handleIncrement({ id: 2, text: "bbb" }) }} className='btn btn-outline-success btn-sm'>按我!!!!</button>
-                </div>
 
             </div>
         );
