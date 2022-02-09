@@ -1,18 +1,24 @@
-import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import TodoIndex from "./components/TodoIndex";
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-class APP extends Component {
-  state = {};
-  render() {
+import TodoIndex from "./components/TodoIndex";
+import TodoEdit from "./components/TodoEdit";
+
+class App extends Component {
+  state = {  } 
+  render() { 
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={TodoIndex}></Route>
+          <Route path="/" component={TodoIndex} exact />
+          <Route path="/Todo/Index" component={TodoIndex} exact />
+          <Route path="/Todo/Edit/:id" component={TodoEdit} />
         </Switch>
-      </BrowserRouter>
+      </BrowserRouter>   
     );
   }
 }
 
-export default APP;
+export default App;
+

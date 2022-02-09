@@ -12,7 +12,6 @@
             font-size: 1.25em;
         }
     </style>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -45,10 +44,8 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="button1id"></label>
                         <div class="col-md-8">
-                            <button type="button" id="button1id" name="button1id" class="btn btn-danger"
-                                onclick='MakeRequestSync()'>Hello</button>
-                            <button type="button" id="button2id" name="button2id" class="btn btn-success"
-                                onclick='MakeRequestAsync()'>Hello (AJAX)</button> &nbsp;
+                            <button type="button" id="button1id" name="button1id" class="btn btn-danger" onclick='MakeRequestSync()'>Hello</button>
+                            <button type="button" id="button2id" name="button2id" class="btn btn-success" onclick='MakeRequestAsync()'>Hello (AJAX)</button> &nbsp;
                             <span id='ResponseDiv'></span>
                         </div>
                     </div>
@@ -76,8 +73,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="button1id"></label>
                         <div class="col-md-8">
-                            <button type="button" id="getButton" name="getButton" class="btn btn-success">Hello --
-                                $.get()</button> &nbsp;
+                            <button type="button" id="getButton" name="getButton" class="btn btn-success">Hello -- $.get()</button> &nbsp;
                             <span id='reportSpan'></span>
                         </div>
                     </div>
@@ -92,23 +88,20 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="firstNameTextBox">FirstName:</label>
                         <div class="col-md-4">
-                            <input name="firstNameTextBox" id="firstNameTextBox" type="text"
-                                class="form-control input-md">
+                            <input name="firstNameTextBox" id="firstNameTextBox" type="text" class="form-control input-md">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="lastNameTextBox">LastName:</label>
                         <div class="col-md-4">
-                            <input name="lastNameTextBox" id="lastNameTextBox" type="text"
-                                class="form-control input-md">
+                            <input name="lastNameTextBox" id="lastNameTextBox" type="text" class="form-control input-md">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="button1id"></label>
                         <div class="col-md-8">
-                            <button type="button" id="postButton" name="postButton" class="btn btn-success">Hello --
-                                $.post(), $.ajax()</button> &nbsp;
+                            <button type="button" id="postButton" name="postButton" class="btn btn-success">Hello -- $.post(), $.ajax()</button> &nbsp;
                             <span id='resultSpan'></span>
                         </div>
                     </div>
@@ -126,42 +119,25 @@
     <script type='text/javascript' src='js/ajax_concept.js'></script>
 
     <script>
-        $(document).ready(function () {
-            $(".nav-tabs a").click(function () {
+        $(document).ready(function() {
+            $(".nav-tabs a").click(function() {
                 $(this).tab('show');
             });
 
 
+            $("#getButton").on("click", function() {
+                var s = $("#nameTextBox").val();
 
 
 
-                $("#getButton").on("click", async function () {
-                    var s = $("#nameTextBox").val();
-                    var result = await axios.get("/hello/" + s);
-                    $("#reportSpan").text(result.data);
-                })
 
 
-                // var s = $("#nameTextBox").val();
-
-                // var dataToServer = {
-                //     firstName:$("#firstNameTextBox").val,
-                //     lastName:$("#lastNameTextBox").val()
-                // }
-
-                // var result = await $.ajax({
-                //     type:'post',
-                //     url:'/test2',
-                //     data:JSON.stringify(dataToServer),
-                //     contentType:"application/json",
-                //     headers:{
-                //         prefix:"Mr."
-                //     }
-                // })
+                $("#reportSpan").text(s);
+            })
 
 
 
-            $("#postButton").on("click", function () {
+            $("#postButton").on("click", function() {
                 var dataToServer = {
                     firstName: $("#firstNameTextBox").val(),
                     lastName: $("#lastNameTextBox").val()
